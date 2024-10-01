@@ -33,11 +33,17 @@ function getHumanChoice(){
     let choice = prompt("Rock, Paper, or Scissors?");
    
     if (choice.toLowerCase() === "rock" || choice.toLowerCase() === "paper" || choice.toLowerCase() === "scissor" || choice.toLowerCase() === "scissors"){
+        if (choice.toLowerCase() === "scissor"){
+            choice = "scissors";
+        }
             choiceValidCheck = 1;
     } else {
         do {
             choice = prompt("That's not a valid choice, try again. Rock, Paper, or Scissors?");
             if (choice.toLowerCase() === "rock" || choice.toLowerCase() === "paper" || choice.toLowerCase() === "scissor" || choice.toLowerCase() === "scissors"){
+                if (choice.toLowerCase() === "scissor"){
+                    choice = "scissors";
+                }
                 choiceValidCheck = 1;
             } 
         } while (choiceValidCheck !== 1);
