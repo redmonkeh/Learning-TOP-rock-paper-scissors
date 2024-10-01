@@ -21,7 +21,8 @@ function getComputerChoice(){
     return choiceName;
 }
 
-console.log(getComputerChoice());
+console.log("Computer choose " + getComputerChoice());
+
 let promptMessage = "Rock, Paper, or Scissors?";
 
 function capitalize(string){
@@ -51,10 +52,18 @@ function getHumanChoice(){
             } 
         } while (choiceValidCheck !== 1);
     }   
-
+    console.log("You choose " + capitalize(choice));
     return capitalize(choice);
         
 }
 
-console.log(getHumanChoice());
+function playRound(humanChoice, computerChoice){
+    console.log("Play!!");
 
+}
+
+
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
+
+playRound(humanSelection, computerSelection);
