@@ -21,7 +21,12 @@ function getComputerChoice(){
 console.log(getComputerChoice());
 let promptMessage = "Rock, Paper, or Scissors?";
 
-
+function capitalize(string){
+    string = string.toLowerCase();
+    firstLetter = string.charAt(0);
+    firstLetterCap = string.charAt(0).toUpperCase();
+    return string.replace(firstLetter, firstLetterCap);
+}
 
 function getHumanChoice(){
     let choiceValidCheck = 0; 
@@ -38,7 +43,7 @@ function getHumanChoice(){
         } while (choiceValidCheck !== 1);
     }   
 
-    return choice;
+    return capitalize(choice);
         
 }
 
