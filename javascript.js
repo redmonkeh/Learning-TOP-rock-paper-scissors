@@ -1,6 +1,4 @@
-console.log("Hello World");
-
-
+console.log("Lets play a game of Rock, Paper, Scissors!");
 
 function getComputerChoice(){
     let choice = Math.floor(Math.random()*3);
@@ -16,7 +14,6 @@ function getComputerChoice(){
         else{
         choiceName = "Something went wrong...";
         }
-    console.log("Computer choose " + choiceName);
     return choiceName;
 }
 
@@ -51,13 +48,11 @@ function getHumanChoice(){
             } 
         } while (choiceValidCheck !== 1);
     }   
-    console.log("You choose " + capitalize(choice));
     return capitalize(choice);
         
 }
 
 function playRound(humanChoice, computerChoice){
-    console.log("Play!!");
     if (humanChoice === computerChoice){
         console.log("It's a tie! " + humanChoice + " ties with " + computerChoice);
     } else if (humanChoice === "Rock"){
