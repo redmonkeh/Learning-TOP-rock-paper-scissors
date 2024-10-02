@@ -1,7 +1,6 @@
 console.log("Hello World");
 
-let humanScore = 0;
-let computerScore =0;
+
 
 function getComputerChoice(){
     let choice = Math.floor(Math.random()*3);
@@ -90,7 +89,29 @@ function playRound(humanChoice, computerChoice){
 }
 
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
+let humanScore = 0;
+let computerScore = 0;
 
-playRound(humanSelection, computerSelection);
+function playGame(){
+
+    humanScore = 0;
+    computerScore = 0;
+    let gameCount = 0;
+    while (gameCount < 5){
+        const humanSelection = getHumanChoice();
+        const computerSelection = getComputerChoice();
+        playRound(humanSelection, computerSelection);
+        gameCount = ++gameCount;
+        console.log("Humans Score: " + humanScore + " Computers Score: " + computerScore + " For game: " + gameCount);
+    }
+
+    if (computerScore === humanScore){
+        console.log("This game ended in a tie!");
+    } else if (humanScore > computerScore){
+        console.log("Congrats! You won this game!");
+    } else {
+        console.log("Oh no! You lost this game!");
+    }
+}
+
+playGame();
