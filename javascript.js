@@ -1,4 +1,4 @@
-console.log("Lets play a game of Rock, Paper, Scissors!");
+// console.log("Lets play a game of Rock, Paper, Scissors!");
 
 function getComputerChoice(){
     let choice = Math.floor(Math.random()*3);
