@@ -102,9 +102,7 @@ let computerScore = 0;
 
 function playGame(){
 
-    humanScore = 0;
-    computerScore = 0;
-    let gameCount = 0;
+    //let gameCount = 0;
 
     /*
     while (gameCount < 5){
@@ -115,27 +113,34 @@ function playGame(){
         console.log("Humans Score: " + humanScore + " Computers Score: " + computerScore + " For game: " + gameCount);
     }
     */
-
+    
     buttons.forEach((button) => {
         button.addEventListener("click", () => {
             const humanSelection = getHumanChoice(button.id);
             const computerSelection = getComputerChoice();
             playRound(humanSelection, computerSelection);
             score.textContent = "Humans Score: " + humanScore + " Computers Score: " + computerScore;
+
+            if(computerScore == 5 || humanScore == 5){              
+                if (computerScore === humanScore){
+                    endGame.textContent = "This game ended in a tie!";
+                } else if (humanScore > computerScore){
+                    endGame.textContent = "Congrats! You won this game!";
+                } else {
+                    endGame.textContent = "Oh no! You lost this game!";
+                }
+            } 
+
         });
     }); 
-
-
-    if (computerScore === humanScore){
-        console.log("This game ended in a tie!");
-    } else if (humanScore > computerScore){
-        console.log("Congrats! You won this game!");
-    } else {
-        console.log("Oh no! You lost this game!");
-    }
-
+    
     const score = document.createElement("p");
     results.appendChild(score);  
+    const endGame = document.createElement("p");
+    results.appendChild(endGame);
+
+    
+
 }
 
 playGame();
