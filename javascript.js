@@ -84,15 +84,9 @@ function playRound(humanChoice, computerChoice){
 }
 
 const buttons = document.querySelectorAll("button");
+const results = document.querySelector(".results");
 
-buttons.forEach((button) => {
-    button.addEventListener("click", () => {
-        const humanSelection = getHumanChoice(button.id);
-        const computerSelection = getComputerChoice();
-        playRound(humanSelection, computerSelection);
-        console.log("Humans Score: " + humanScore + " Computers Score: " + computerScore);
-    });
-}); 
+
 
 
 let humanScore = 0;
@@ -114,6 +108,16 @@ function playGame(){
     }
     */
 
+    buttons.forEach((button) => {
+        button.addEventListener("click", () => {
+            const humanSelection = getHumanChoice(button.id);
+            const computerSelection = getComputerChoice();
+            playRound(humanSelection, computerSelection);
+            score.textContent = "Humans Score: " + humanScore + " Computers Score: " + computerScore;
+        });
+    }); 
+
+
     if (computerScore === humanScore){
         console.log("This game ended in a tie!");
     } else if (humanScore > computerScore){
@@ -121,6 +125,9 @@ function playGame(){
     } else {
         console.log("Oh no! You lost this game!");
     }
+
+    const score = document.createElement("p");
+    results.appendChild(score);  
 }
 
 playGame();
