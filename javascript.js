@@ -87,7 +87,10 @@ const buttons = document.querySelectorAll("button");
 
 buttons.forEach((button) => {
     button.addEventListener("click", () => {
-        alert(button.id);
+        const humanSelection = button.id;
+        const computerSelection = getComputerChoice();
+        playRound(humanSelection, computerSelection);
+        console.log("Humans Score: " + humanScore + " Computers Score: " + computerScore);
     });
 }); 
 
