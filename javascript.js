@@ -28,9 +28,9 @@ function capitalize(string){
     return string.replace(firstLetter, firstLetterCap);
 }
 
-function getHumanChoice(){
+function getHumanChoice(choice){
     let choiceValidCheck = 0; 
-    let choice = prompt("Rock, Paper, or Scissors?");
+    //let choice = prompt("Rock, Paper, or Scissors?");
    
     if (choice.toLowerCase() === "rock" || choice.toLowerCase() === "paper" || choice.toLowerCase() === "scissor" || choice.toLowerCase() === "scissors"){
         if (choice.toLowerCase() === "scissor"){
@@ -87,7 +87,7 @@ const buttons = document.querySelectorAll("button");
 
 buttons.forEach((button) => {
     button.addEventListener("click", () => {
-        const humanSelection = button.id;
+        const humanSelection = getHumanChoice(button.id);
         const computerSelection = getComputerChoice();
         playRound(humanSelection, computerSelection);
         console.log("Humans Score: " + humanScore + " Computers Score: " + computerScore);
