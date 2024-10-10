@@ -83,6 +83,14 @@ function playRound(humanChoice, computerChoice){
 
 }
 
+const buttons = document.querySelectorAll("button");
+
+buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+        alert(button.id);
+    });
+}); 
+
 
 let humanScore = 0;
 let computerScore = 0;
@@ -92,6 +100,8 @@ function playGame(){
     humanScore = 0;
     computerScore = 0;
     let gameCount = 0;
+
+    /*
     while (gameCount < 5){
         const humanSelection = getHumanChoice();
         const computerSelection = getComputerChoice();
@@ -99,6 +109,7 @@ function playGame(){
         gameCount = ++gameCount;
         console.log("Humans Score: " + humanScore + " Computers Score: " + computerScore + " For game: " + gameCount);
     }
+    */
 
     if (computerScore === humanScore){
         console.log("This game ended in a tie!");
