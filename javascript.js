@@ -53,30 +53,38 @@ function getHumanChoice(choice){
 }
 
 function playRound(humanChoice, computerChoice){
+    const roundResult = document.createElement("p");
     if (humanChoice === computerChoice){
-        console.log("It's a tie! " + humanChoice + " ties with " + computerChoice);
+        roundResult.textContent = "It's a tie! " + humanChoice + " ties with " + computerChoice;
+        results.appendChild(roundResult);
     } else if (humanChoice === "Rock"){
         if (computerChoice === "Paper"){
-            console.log("You lose! " + computerChoice + " beats " + humanChoice);
+            roundResult.textContent = "You lose! " + computerChoice + " beats " + humanChoice;
+            results.appendChild(roundResult);
             computerScore = ++computerScore;
         } else {
-            console.log("You Win! " + humanChoice + " beats " + computerChoice);
+            roundResult.textContent = "You Win! " + humanChoice + " beats " + computerChoice;
+            results.appendChild(roundResult);
             humanScore = ++humanScore;
         }
     } else if (humanChoice === "Scissors"){
         if (computerChoice === "Rock"){
-            console.log("You lose! " + computerChoice + " beats " + humanChoice);
+            roundResult.textContent = "You lose! " + computerChoice + " beats " + humanChoice;
+            results.appendChild(roundResult);
             computerScore = ++computerScore;
         } else {
-            console.log("You Win! " + humanChoice + " beats " + computerChoice);
+            roundResult.textContent = "You Win! " + humanChoice + " beats " + computerChoice;
+            results.appendChild(roundResult);
             humanScore = ++humanScore;
         }
     } else if (humanChoice === "Paper"){
         if (computerChoice === "Scissors"){
-            console.log("You lose! " + computerChoice + " beats " + humanChoice);
+            roundResult.textContent = "You lose! " + computerChoice + " beats " + humanChoice;
+            results.appendChild(roundResult);
             computerScore = ++computerScore;
         } else {
-            console.log("You Win! " + humanChoice + " beats " + computerChoice);
+            roundResult.textContent = "You Win! " + humanChoice + " beats " + computerChoice;
+            results.appendChild(roundResult);
             humanScore = ++humanScore;
         }
     }
