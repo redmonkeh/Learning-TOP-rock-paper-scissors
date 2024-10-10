@@ -121,7 +121,10 @@ function playGame(){
             playRound(humanSelection, computerSelection);
             score.textContent = "Humans Score: " + humanScore + " Computers Score: " + computerScore;
 
-            if(computerScore == 5 || humanScore == 5){              
+            if(computerScore == 5 || humanScore == 5){     
+                buttons.forEach((button) => {
+                    button.disabled = true;
+                });         
                 if (computerScore === humanScore){
                     endGame.textContent = "This game ended in a tie!";
                 } else if (humanScore > computerScore){
